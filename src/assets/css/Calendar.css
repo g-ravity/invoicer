@@ -1,0 +1,97 @@
+.date-picker {
+  position: relative;
+  color: #fff;
+  width: 240px;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+.date-picker__date-selection {
+  padding: 10px;
+  font-size: 24px;
+  display: flex;
+  cursor: pointer;
+}
+
+.date-picker__calendar {
+  position: absolute;
+}
+.calendar {
+  box-sizing: border-box;
+  width: inherit;
+  min-height: 17em;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  user-select: none;
+  background: #bd1550;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  font-family: "Nunito Sans", sans-serif;
+}
+.calendar__controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 0.5em;
+  font-weight: bold;
+}
+.calendar__controls-row .material-icons {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.calendar__controls {
+  align-self: stretch;
+  display: flex;
+}
+.calendar__controls .material-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar__week,
+.calendar__days-of-week {
+  display: flex;
+  justify-content: space-between;
+}
+.calendar__days-of-week {
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  margin-bottom: 0.5em;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 0 10px;
+  background: #e97f02;
+}
+.calendar__day,
+.calendar__day-of-week,
+.calendar__month-with-year,
+.calendar__controls .material-icons {
+  text-align: center;
+  min-width: 1.2em;
+  padding: 0.2em;
+}
+.calendar__day,
+.calendar__month-with-year,
+.calendar__controls .material-icons {
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.calendar__day:hover,
+.calendar__month-with-year:hover,
+.calendar__controls .material-icons:hover {
+  background: #9fb211;
+}
+.calendar__day--pale {
+  color: rgba(255, 255, 255, 0.5);
+}
+.calendar__day--emphasize {
+  font-weight: bold;
+  color: #f8ca00;
+}
