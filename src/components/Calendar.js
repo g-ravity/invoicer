@@ -69,10 +69,10 @@ class Calendar extends Component {
     return (
       <div className="calendar__controls-row">
         <div className="calendar__controls">
-          <i class="material-icons" onClick={this.subYear}>
+          <i className="material-icons" onClick={this.subYear}>
             fast_rewind
           </i>
-          <i class="material-icons" onClick={this.subMonth}>
+          <i className="material-icons" onClick={this.subMonth}>
             arrow_left
           </i>
         </div>
@@ -83,10 +83,10 @@ class Calendar extends Component {
           {getMonthAsWord(date)} {date.getFullYear()}
         </div>
         <div className="calendar__controls">
-          <i class="material-icons" onClick={this.addMonth}>
+          <i className="material-icons" onClick={this.addMonth}>
             arrow_right
           </i>
-          <i class="material-icons" onClick={this.addYear}>
+          <i className="material-icons" onClick={this.addYear}>
             fast_forward
           </i>
         </div>
@@ -169,21 +169,15 @@ class DatePicker extends Component {
   };
 
   render() {
-    const { onDatePick, dateFormat } = this.props;
     const { isCalendarOpen, selectedDate } = this.state;
 
     return (
-      <div className="date-picker">
-        <div className="date-picker__date-selection" onClick={this.handleClick}>
-          <i className="far fa-calendar-alt" />
-          {/* <input
-            className="date-picker__input"
-            type="text"
-            placeholder="Select Date"
-            value={selectedDate && dateFns.format(selectedDate, dateFormat)}
-          /> */}
-          <Input placeholder="Select Date" label="Date" />
-        </div>
+      <>
+        <Input
+          placeholder="Select Date"
+          label="Date"
+          onClick={this.handleClick}
+        />
         {isCalendarOpen && (
           <Calendar
             className="date-picker__calendar"
@@ -191,7 +185,7 @@ class DatePicker extends Component {
             onDatePick={this.handleDatePick}
           />
         )}
-      </div>
+      </>
     );
   }
 }
