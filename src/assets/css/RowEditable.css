@@ -1,0 +1,30 @@
+.flex-parent {
+  display: flex;
+  align-items: center;
+}
+
+div.row-group {
+  position: relative;
+}
+
+p.item-group {
+  padding: 10px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item-description {
+  font-size: 0.8rem !important;
+  padding-top: 0px !important;
+}
+
+.add-invoice-item {
+  cursor: pointer;
+  position: absolute;
+  right: -15px;
+  bottom: -15px;
+  font-size: 2rem;
+  z-index: 1;
+  background: #fff;
+  border-radius: 2rem;
+}

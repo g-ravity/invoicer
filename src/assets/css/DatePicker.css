@@ -5,7 +5,6 @@
   box-sizing: border-box;
   width: 300px;
   min-height: 17em;
-  margin: 0px 10px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -37,6 +36,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.calendar__days-of-week {
+  color: #fff;
 }
 .calendar__week,
 .calendar__days-of-week {
@@ -75,7 +77,7 @@
   color: #fff;
 }
 .calendar__day--pale {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 .calendar__day--emphasize {
   font-weight: bold;

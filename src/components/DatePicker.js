@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import dateFns from "date-fns";
 import classNames from "classnames";
 
-import "../assets/css/Calendar.css";
+import "../assets/css/DatePicker.css";
 import Input from "./Input";
 
 // Helpers
-const getDaysForCalendar = (date = new Date(), calendarSize = 42) => {
+const getDaysForCalendar = (date = new Date(), calendarSize = 35) => {
   const visibleCalendarDays = [];
   const monthStartDate = dateFns.startOfMonth(date);
   const monthEndDate = dateFns.endOfMonth(date);
@@ -154,6 +155,16 @@ class DatePicker extends Component {
     };
   }
 
+  componentDidUpdate() {
+    if (this.state.isCalendarOpen) {
+      ReactDOM.findDOMNode(
+        this
+      ).nextElementSibling.style.marginLeft = `-${(300 -
+        ReactDOM.findDOMNode(this).clientWidth) /
+        2}px`;
+    }
+  }
+
   handleClick = event => {
     event.preventDefault();
     event.target.blur();
@@ -165,7 +176,7 @@ class DatePicker extends Component {
       isCalendarOpen: false,
       selectedDate: date
     });
-    this.props.onDatePick(date);
+    this.props.onDatePick(this.props.name, date.toString());
   };
 
   render() {
@@ -174,9 +185,12 @@ class DatePicker extends Component {
     return (
       <>
         <Input
-          placeholder="Select Date"
-          label="Date"
+          name={this.props.name}
+          value={this.props.value}
           onClick={this.handleClick}
+          id={this.props.id}
+          classList={this.props.classList}
+          readOnly={true}
         />
         {isCalendarOpen && (
           <Calendar
