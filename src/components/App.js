@@ -39,7 +39,7 @@ class App extends Component {
       totalAmount: 500,
       issuerName: "",
       issuerPhone: "",
-      issuerEmail: "theravikganguly@gmail.com",
+      issuerEmail: "",
       issuerWebsite: ""
     };
   }
@@ -284,7 +284,7 @@ class App extends Component {
             />
           </div>
           <div className="flex-parent">
-            <i className="material-icons">http</i>
+            <i className="material-icons">info</i>
             <Input
               name="issuerWebsite"
               placeholder="Your Website"
@@ -293,6 +293,14 @@ class App extends Component {
             />
           </div>
         </div>
+
+        <button
+          onCLick={() => {
+            window.print();
+          }}
+        >
+          Generate PDF
+        </button>
       </div>
     );
   }

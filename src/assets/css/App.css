@@ -5,7 +5,7 @@
 }
 
 #container {
-  width: 60vw;
+  width: 80vw;
   min-height: 120vh;
   margin: 30px auto;
   border: 1px solid #fff;
@@ -160,6 +160,7 @@ i {
 
 #contact-details div {
   margin: 20px;
+  width: 100%;
 }
 
 #contact-details i {
@@ -168,6 +169,7 @@ i {
 
 #contact-details textarea {
   font-size: 1rem;
+  text-align: center;
   width: 100%;
 }
 
@@ -180,4 +182,23 @@ i {
 #signature {
   border: 1px solid #e3e3e3;
   margin-bottom: 40px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #container,
+  #container * {
+    visibility: visible;
+  }
+  #container {
+    width: 100%;
+    padding: 0px 30px;
+    box-sizing: border-box;
+  }
+
+  #invoice-detail {
+    padding: 0;
+  }
 }
